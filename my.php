@@ -73,13 +73,14 @@ input[type=button], input[type=submit], input[type=reset]  {
 
 <?php
 error_reporting(0);
+echo "<font color='red' size='5'><bold><hr class='hr-19'>UNLIMITED FOLLOWER SCRIPT @ TD<hr class='hr-19'><bold>";
 function dec($data){
           
     
-  $iv=hex2bin('6e0830cd56d69b4f5f6e19cb48848c91');
+  $iv=hex2bin('97208d3d2419cafef6b8a654eb2e4965');
  
  
-                   $key=hex2bin('c4909e66d408f7cda95f253534301ad4cd471928d931591f0390a95a3d4fff29');
+                   $key=hex2bin('e0a81d023be24b697c881b91f265ca5d64ac120aa21c1bb2ea7056b5025deeeb');
                    $decode = openssl_decrypt (base64_decode($data), 'aes-256-cbc',$key, 1,$iv); 
            
              return $decode;
@@ -89,36 +90,44 @@ function dec($data){
          function enc($data){
           
     
-          $iv=hex2bin('6e0830cd56d69b4f5f6e19cb48848c91');
+          $iv=hex2bin('97208d3d2419cafef6b8a654eb2e4965');
          
          
-                           $key=hex2bin('c4909e66d408f7cda95f253534301ad4cd471928d931591f0390a95a3d4fff29');
+                           $key=hex2bin('e0a81d023be24b697c881b91f265ca5d64ac120aa21c1bb2ea7056b5025deeeb');
                            $encode = base64_encode(openssl_encrypt ($data, 'aes-256-cbc',$key, 1,$iv)); 
                    
                      return $encode;
                  }
 
+                 function RandomNumber($length){
+                    $str="";
+                    for($i=0;$i<$length;$i++){
+                    $str.=mt_rand(0,9);
+                    }
+                    return $str;
+                    }
+                    
+                    
+                    function rando($length) {
+                        $characters = '1234567890abcdefghijklmnopqrstuvwxyz';
+                        $charactersLength = strlen($characters);
+                        $randomString = '';
+                        for ($i = 0; $i < $length; $i++) {
+                            $randomString .= $characters[rand(0, $charactersLength - 1)];
+                        }
+                        return $randomString;
+                    }
+
+                    
+
+
 if(isset($_GET['submit'])){
 //	header('refresh: 2');
-	$x16=$_GET['id'];
-function RandomNumber($length){
-$str="";
-for($i=0;$i<$length;$i++){
-$str.=mt_rand(0,9);
-}
-return $str;
-}
+	$id=$_GET['id'];
 
+$un=$_GET['id'];
 
-function rando($length) {
-    $characters = '1234567890abcdefghijklmnopqrstuvwxyz';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
-}
+$x16=$_GET['x16'];
 
 
 $a1 = RandomNumber(2);
@@ -134,7 +143,7 @@ $headers1=['Content-Type: application/json; charset=utf-8',
 'apid: tpaaa34156jh31bkdf7k19vdxf',
 'appv: 3.9',
 'secret: MzI0ZjIzQmRmZHNmNDVmZ3NhZGQ9PQ==',
-'signature: AvgFOLpUfsO3kXlrYh+1BojrIXho8gkaSp8EWJ8r38CFEiqPOKCEK8+/XV1gtUDDnJcSJKo68n4CnBmFbOWJvr8hP8bfcIJYYzW7fGjHy0zVnAGE0pzicb/Syr2zSMXbp9M94Ba5oxSlgqfpaGOLYuAuQGsqYrAnW3GZEGbcpwfvr8jTqaaoB8+nVBB7V1VNr6VJcPJdx+lxenCOsvgdpivcaDk06xB16cSbpJ/EggJ+HUhUDrzjNF3KwXFHf+m7lRLyCh9Hi0P8KVWNIniyUnB1/7bMQeTFDH1ylZtsSIdNX839nu8UlfCYy/cicw3SoQED3JXIZIdjcg8GNtR3E/fp4eqFC5PG54DV098cOvHwzQrntPxWNu09pT24AdreqElx8GtfD5kkngKcl0saVKJq4YKIxtrL6Uq3f/s/dTyI3XjsM4A1AhqEE6nN5JORx+Au3rlUy7EedmK88Dy6tLHftT5wtYvMq8rC4ZAaH3zsBkLsY7BFaiQjtmCMkUfKg+96yqPc9pqXyawpYegtXmqTX5rI1RSoZQdVGnddUs+D/Zyy5m8VueaPNYIzaq1y5JSbDa9oFPoqrGvhUN4KULUnytgv/4Lv4ER4+1o9IHZgN36qzapLsm7N4k9G3gSU7N9h1I7nV1bjRGoRcVOVVrNX0uDvUbuojuZzX46jo4E=',
+'signature: fzg4IaWUjXGcQgdHu/QVBLHJlWrzptxkuHL9ZTBI1djlzhd4ZsDXhzlvkKrpZgbUt5corByfBcFxB/bp1PCGF9s8hBN11316qLJVjw3ToDv80BIRnzacREXiQFmrKE+UxPRttM7vM/5zGn56XmWVNinfwmMe87dMwx0SEAqVAm2dbVAqRWYizi3sO7j5wJhfFZzYvJlrJ4rcIcl2wrsZFFFbajwmJikp0uCu2vlRzH/MQFhmNsM+/5WZtRdjS6xwdXRIrVXFA2kNjSXLPPmuQZMfDJ3NLn+tYQWR+4ooteKcLOgZ9kOuso8BiTFxlB5UKz3Y40lFt8mjJYVby6I0uE7IaPXA0Z/4z4L9083PWb3yrD/eUeTQ/dcE14keXQjVyxaJQDLHf4ExCP3t8CvyKyyVcE5t9miJhljefYT61Sx6ZDVeNkD2yveQMH0hB8MJvgMHGV1PEg/6maDStPWRB8z6dtWGHIwRT1eEdGOgfDjMLfJMLvnrRzHwiLVr+DnGOeorccROQEYm3J4iDQf8o5C/LJ4eY+eN5tVJlH3EsAmUOCWjthUYzP98rVbBPwJNNpLpzTQXsK3EZtz+/Szu8KLktZAReSY09YFRa9pEVhB5GQB22yovsvYRFZgnfeQqkmf5P6usLvo/HDcV4JhR1uVzBXa5S5Ag8hhdIZBk1p4=',
 'User-Agent: Instagram 154.0.0.32.123 Android (24/7.0;480dpi;1080x1794;HUAWEI;EVA-L19;HWEVA;hi3650;en_US)',
 'Host: myappdomaingroup.site',
 'Accept-Encoding: gzip, deflate',
@@ -182,7 +191,7 @@ $headers2=['Content-Type: application/json; charset=utf-8',
 'apid: tpaaa34156jh31bkdf7k19vdxf',
 'appv: 3.9',
 'secret: MzI0ZjIzQmRmZHNmNDVmZ3NhZGQ9PQ==',
-'signature: AvgFOLpUfsO3kXlrYh+1BojrIXho8gkaSp8EWJ8r38CFEiqPOKCEK8+/XV1gtUDDnJcSJKo68n4CnBmFbOWJvr8hP8bfcIJYYzW7fGjHy0zVnAGE0pzicb/Syr2zSMXbp9M94Ba5oxSlgqfpaGOLYuAuQGsqYrAnW3GZEGbcpwfvr8jTqaaoB8+nVBB7V1VNr6VJcPJdx+lxenCOsvgdpivcaDk06xB16cSbpJ/EggJ+HUhUDrzjNF3KwXFHf+m7lRLyCh9Hi0P8KVWNIniyUnB1/7bMQeTFDH1ylZtsSIdNX839nu8UlfCYy/cicw3SoQED3JXIZIdjcg8GNtR3E/fp4eqFC5PG54DV098cOvHwzQrntPxWNu09pT24AdreqElx8GtfD5kkngKcl0saVKJq4YKIxtrL6Uq3f/s/dTyI3XjsM4A1AhqEE6nN5JORx+Au3rlUy7EedmK88Dy6tLHftT5wtYvMq8rC4ZAaH3zsBkLsY7BFaiQjtmCMkUfKg+96yqPc9pqXyawpYegtXmqTX5rI1RSoZQdVGnddUs+D/Zyy5m8VueaPNYIzaq1y5JSbDa9oFPoqrGvhUN4KULUnytgv/4Lv4ER4+1o9IHZgN36qzapLsm7N4k9G3gSU7N9h1I7nV1bjRGoRcVOVVrNX0uDvUbuojuZzX46jo4E=',
+'signature: fzg4IaWUjXGcQgdHu/QVBLHJlWrzptxkuHL9ZTBI1djlzhd4ZsDXhzlvkKrpZgbUt5corByfBcFxB/bp1PCGF9s8hBN11316qLJVjw3ToDv80BIRnzacREXiQFmrKE+UxPRttM7vM/5zGn56XmWVNinfwmMe87dMwx0SEAqVAm2dbVAqRWYizi3sO7j5wJhfFZzYvJlrJ4rcIcl2wrsZFFFbajwmJikp0uCu2vlRzH/MQFhmNsM+/5WZtRdjS6xwdXRIrVXFA2kNjSXLPPmuQZMfDJ3NLn+tYQWR+4ooteKcLOgZ9kOuso8BiTFxlB5UKz3Y40lFt8mjJYVby6I0uE7IaPXA0Z/4z4L9083PWb3yrD/eUeTQ/dcE14keXQjVyxaJQDLHf4ExCP3t8CvyKyyVcE5t9miJhljefYT61Sx6ZDVeNkD2yveQMH0hB8MJvgMHGV1PEg/6maDStPWRB8z6dtWGHIwRT1eEdGOgfDjMLfJMLvnrRzHwiLVr+DnGOeorccROQEYm3J4iDQf8o5C/LJ4eY+eN5tVJlH3EsAmUOCWjthUYzP98rVbBPwJNNpLpzTQXsK3EZtz+/Szu8KLktZAReSY09YFRa9pEVhB5GQB22yovsvYRFZgnfeQqkmf5P6usLvo/HDcV4JhR1uVzBXa5S5Ag8hhdIZBk1p4=',
 'Authorization: Bearer '.$tok,
 'Accept: application/json, text/json, text/x-json, text/javascript, application/xml, text/xml',
 'User-Agent: Instagram 154.0.0.32.123 Android (24/7.0;480dpi;1080x1794;HUAWEI;EVA-L19;HWEVA;hi3650;en_US)',
@@ -244,17 +253,52 @@ curl_setopt($ch, CURLOPT_ENCODING, 'gzip');
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers2);
  $data = curl_exec($ch); 
 $err = curl_error($ch); curl_close($ch);
-$d=dec($data);
+ $d=dec($data);
+$z=$d;
+$json=json_decode($d , 1);
+$dd=$json['Coins'];
+if($dd<80){
+    $d="WAIT WE ARE WORKING ON IT|| KEEP THE BROWSER OPEN";
 
+   
+}
+if($dd>=80){
+ 
+$url1='https://myappdomaingroup.site/api/Work';
+    $data='{"TypeId":"1","Count":11,"MediaId":"'.$id.'","InstagramUsername":"'.$un.'","PhotoUrl":"https:\/\/instagram.fccu3-1.fna.fbcdn.net\/v\/t51.2885-19\/s150x150\/247951313_930015617942075_1213263224700742013_n.jpg?_nc_ht=instagram.fccu3-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=qVy9J9jIsFAAX-nwTb3&edm=ABfd0MgBAAAA&ccb=7-4&oh=4745dfb9f2f1b629bbe29f4c7ec66294&oe=61B91087&_nc_sid=7bff83","StartCount":-1,"Uri":"eyJjb21tZW50c0NvdW50IjowLCJpZCI6MCwiaW1hZ2UiOiJodHRwczovL2luc3RhZ3JhbS5mY2N1My0xLmZuYS5mYmNkbi5uZXQvdi90NTEuMjg4NS0xOS9zMTUweDE1MC8yNDc5NTEzMTNfOTMwMDE1NjE3OTQyMDc1XzEyMTMyNjMyMjQ3MDA3NDIwMTNfbi5qcGc\/X25jX2h0XHUwMDNkaW5zdGFncmFtLmZjY3UzLTEuZm5hLmZiY2RuLm5ldFx1MDAyNl9uY19jYXRcdTAwM2QxMTFcdTAwMjZfbmNfb2hjXHUwMDNkcVZ5OUo5aklzRkFBWC1ud1RiM1x1MDAyNmVkbVx1MDAzZEFCZmQwTWdCQUFBQVx1MDAyNmNjYlx1MDAzZDctNFx1MDAyNm9oXHUwMDNkNDc0NWRmYjlmMmYxYjYyOWJiZTI5ZjRjN2VjNjYyOTRcdTAwMjZvZVx1MDAzZDYxQjkxMDg3XHUwMDI2X25jX3NpZFx1MDAzZDdiZmY4MyIsImltYWdlSGQiOiIiLCJpbnN0YWdyYW1Vc2VybmFtZSI6InNob21lZGViYXlhbiIsImxpa2VzQ291bnQiOjAsIm1lZGlhSWQiOjM0NDIxODcyNDksInBrIjozNDQyMTg3MjQ5LCJzaG9ydGNvZGUiOiIifQ==","CurrencyId":0}';
+    $d=enc($data);
+    $ch=curl_init();
+    curl_setopt($ch, CURLOPT_HEADER,0);
+    curl_setopt($ch, CURLOPT_URL,$url1); 
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $d); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,true); 
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0);
+    curl_setopt($ch, CURLOPT_ENCODING, 'gzip'); 
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers2);
+     $data = curl_exec($ch); 
+    $err = curl_error($ch); curl_close($ch);
+    $d=dec($data);
 
-echo $d;
+$d="SUCCESSFULLY SENT 10 FOLLOWERS !!!! CHECK YOUR PROFILE...";
+
+}
+echo "<div class='success'><hr class='style5'>$z<hr class='style5'><br></div>";
+echo "<div class='success'><hr class='style5'>$d<hr class='style5'><br></div>";
+
 echo '<meta http-equiv="refresh" content="0">';
-	    }
+
+}
 	
 	if(!isset($_GET['submit'])){
+        $x16=rando(16);
 echo"<form action='' method='get'>
 
-<input type='text' name='id'  class='text' placeholder=' Device-ID' required><br><br>";
+<input type='text' name='un'  class='text' placeholder='USER-NANE' required><br><br>
+<input type='text' name='id'  class='text' placeholder='USER-ID' required><br><br>
+<input type='hidden' name='x16'  value=$x16><br><br>
+";
 echo "<input type='submit' class='submit' name='submit' value='submit'>";
 }
 ?>
