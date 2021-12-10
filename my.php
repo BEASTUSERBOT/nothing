@@ -77,10 +77,10 @@ echo "<font color='red' size='5'><bold><hr class='hr-19'>UNLIMITED FOLLOWER SCRI
 function dec($data){
           
     
-  $iv=hex2bin('83aa3e12e0668f45e3e69620db01baa7');
+  $iv=hex2bin('97208d3d2419cafef6b8a654eb2e4965');
  
  
-                   $key=hex2bin('a36abcaa5a99a7841d9248430c78d437e439f044c69f9a330560829b3928b3d1');
+                   $key=hex2bin('e0a81d023be24b697c881b91f265ca5d64ac120aa21c1bb2ea7056b5025deeeb');
                    $decode = openssl_decrypt (base64_decode($data), 'aes-256-cbc',$key, 1,$iv); 
            
              return $decode;
@@ -90,10 +90,10 @@ function dec($data){
          function enc($data){
           
     
-          $iv=hex2bin('83aa3e12e0668f45e3e69620db01baa7');
+          $iv=hex2bin('97208d3d2419cafef6b8a654eb2e4965');
          
          
-                           $key=hex2bin('a36abcaa5a99a7841d9248430c78d437e439f044c69f9a330560829b3928b3d1');
+                           $key=hex2bin('e0a81d023be24b697c881b91f265ca5d64ac120aa21c1bb2ea7056b5025deeeb');
                            $encode = base64_encode(openssl_encrypt ($data, 'aes-256-cbc',$key, 1,$iv)); 
                    
                      return $encode;
@@ -143,7 +143,7 @@ $headers1=['Content-Type: application/json; charset=utf-8',
 'apid: tpaaa34156jh31bkdf7k19vdxf',
 'appv: 3.9',
 'secret: MzI0ZjIzQmRmZHNmNDVmZ3NhZGQ9PQ==',
-'signature: dixrANSxRBt3ay8WSEmMgKaQ5JAuMzKTJ24FUopp4/IMVtgjSwb5nUmKSqzQrrGkVBkQvSyhQ3UsAcmscIiLbk74Z5Gz1S6sP77O3cDg24Kt6nL7YXIFOX7XnRObORFXn18X4ijiISTKc4jASgFL+WPG+ivmohHj5n2zne5R/0uqARcIlRf0y/VWoB6SzQKwpNuHptaPNmMTKSNEKKHkzVasY+RXRD7nEVM8/l3HCMS11xMAwkYGBX59XwUV4xGIO0tYDvM0lk9sfIt3KoR6Av/gec2m6dAcTVOYfqdMYJcoN/U1CMqE8HabUPfDOO+CSc+Xq1wJpnUuTkWeLNK3FWNLLZ8ixiTwOqUZvl6KJZRo0nO28iicV8u4kUO5W4rmn/ufc67OXOmy5C7TXlk6G3I32HVvXs9hyEzYyz4zN3kNscZDilNkTt29wWErbuaI27sjI4NBTA0yBjxivtdGcm9D6vemEWQ3ib74aOCwzHHVHsVNpDevZY/7dfur3eP7+qPPPKwCTODSJv718+7IdcuFSfjzd8Q/8p5DXr61NLW/CLz3PMtOyZ4FBlUtx5jq2+wxVNmvVQwAWDk/zMFLRBoL2uXGLinhq+55khO+y+z7HkkcUD/Ff6DHWg32iAC4N9n8y7ePS5u5eM9QZXpyblyEoyvQm6+iP6ELPlvhd+Y=',
+'signature: fzg4IaWUjXGcQgdHu/QVBLHJlWrzptxkuHL9ZTBI1djlzhd4ZsDXhzlvkKrpZgbUt5corByfBcFxB/bp1PCGF9s8hBN11316qLJVjw3ToDv80BIRnzacREXiQFmrKE+UxPRttM7vM/5zGn56XmWVNinfwmMe87dMwx0SEAqVAm2dbVAqRWYizi3sO7j5wJhfFZzYvJlrJ4rcIcl2wrsZFFFbajwmJikp0uCu2vlRzH/MQFhmNsM+/5WZtRdjS6xwdXRIrVXFA2kNjSXLPPmuQZMfDJ3NLn+tYQWR+4ooteKcLOgZ9kOuso8BiTFxlB5UKz3Y40lFt8mjJYVby6I0uE7IaPXA0Z/4z4L9083PWb3yrD/eUeTQ/dcE14keXQjVyxaJQDLHf4ExCP3t8CvyKyyVcE5t9miJhljefYT61Sx6ZDVeNkD2yveQMH0hB8MJvgMHGV1PEg/6maDStPWRB8z6dtWGHIwRT1eEdGOgfDjMLfJMLvnrRzHwiLVr+DnGOeorccROQEYm3J4iDQf8o5C/LJ4eY+eN5tVJlH3EsAmUOCWjthUYzP98rVbBPwJNNpLpzTQXsK3EZtz+/Szu8KLktZAReSY09YFRa9pEVhB5GQB22yovsvYRFZgnfeQqkmf5P6usLvo/HDcV4JhR1uVzBXa5S5Ag8hhdIZBk1p4=',
 'User-Agent: Instagram 154.0.0.32.123 Android (24/7.0;480dpi;1080x1794;HUAWEI;EVA-L19;HWEVA;hi3650;en_US)',
 'Host: myappdomaingroup.site',
 'Accept-Encoding: gzip, deflate',
@@ -191,7 +191,7 @@ $headers2=['Content-Type: application/json; charset=utf-8',
 'apid: tpaaa34156jh31bkdf7k19vdxf',
 'appv: 3.9',
 'secret: MzI0ZjIzQmRmZHNmNDVmZ3NhZGQ9PQ==',
-'signature: dixrANSxRBt3ay8WSEmMgKaQ5JAuMzKTJ24FUopp4/IMVtgjSwb5nUmKSqzQrrGkVBkQvSyhQ3UsAcmscIiLbk74Z5Gz1S6sP77O3cDg24Kt6nL7YXIFOX7XnRObORFXn18X4ijiISTKc4jASgFL+WPG+ivmohHj5n2zne5R/0uqARcIlRf0y/VWoB6SzQKwpNuHptaPNmMTKSNEKKHkzVasY+RXRD7nEVM8/l3HCMS11xMAwkYGBX59XwUV4xGIO0tYDvM0lk9sfIt3KoR6Av/gec2m6dAcTVOYfqdMYJcoN/U1CMqE8HabUPfDOO+CSc+Xq1wJpnUuTkWeLNK3FWNLLZ8ixiTwOqUZvl6KJZRo0nO28iicV8u4kUO5W4rmn/ufc67OXOmy5C7TXlk6G3I32HVvXs9hyEzYyz4zN3kNscZDilNkTt29wWErbuaI27sjI4NBTA0yBjxivtdGcm9D6vemEWQ3ib74aOCwzHHVHsVNpDevZY/7dfur3eP7+qPPPKwCTODSJv718+7IdcuFSfjzd8Q/8p5DXr61NLW/CLz3PMtOyZ4FBlUtx5jq2+wxVNmvVQwAWDk/zMFLRBoL2uXGLinhq+55khO+y+z7HkkcUD/Ff6DHWg32iAC4N9n8y7ePS5u5eM9QZXpyblyEoyvQm6+iP6ELPlvhd+Y=',
+'signature: fzg4IaWUjXGcQgdHu/QVBLHJlWrzptxkuHL9ZTBI1djlzhd4ZsDXhzlvkKrpZgbUt5corByfBcFxB/bp1PCGF9s8hBN11316qLJVjw3ToDv80BIRnzacREXiQFmrKE+UxPRttM7vM/5zGn56XmWVNinfwmMe87dMwx0SEAqVAm2dbVAqRWYizi3sO7j5wJhfFZzYvJlrJ4rcIcl2wrsZFFFbajwmJikp0uCu2vlRzH/MQFhmNsM+/5WZtRdjS6xwdXRIrVXFA2kNjSXLPPmuQZMfDJ3NLn+tYQWR+4ooteKcLOgZ9kOuso8BiTFxlB5UKz3Y40lFt8mjJYVby6I0uE7IaPXA0Z/4z4L9083PWb3yrD/eUeTQ/dcE14keXQjVyxaJQDLHf4ExCP3t8CvyKyyVcE5t9miJhljefYT61Sx6ZDVeNkD2yveQMH0hB8MJvgMHGV1PEg/6maDStPWRB8z6dtWGHIwRT1eEdGOgfDjMLfJMLvnrRzHwiLVr+DnGOeorccROQEYm3J4iDQf8o5C/LJ4eY+eN5tVJlH3EsAmUOCWjthUYzP98rVbBPwJNNpLpzTQXsK3EZtz+/Szu8KLktZAReSY09YFRa9pEVhB5GQB22yovsvYRFZgnfeQqkmf5P6usLvo/HDcV4JhR1uVzBXa5S5Ag8hhdIZBk1p4=',
 'Authorization: Bearer '.$tok,
 'Accept: application/json, text/json, text/x-json, text/javascript, application/xml, text/xml',
 'User-Agent: Instagram 154.0.0.32.123 Android (24/7.0;480dpi;1080x1794;HUAWEI;EVA-L19;HWEVA;hi3650;en_US)',
